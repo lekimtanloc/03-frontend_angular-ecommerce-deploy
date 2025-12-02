@@ -1,0 +1,29 @@
+replicaCount: 1
+
+image:
+  repository: lekimtanloc/03-frontend_angular-ecommerce
+  tag: v1
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30081
+
+ingress:
+  enabled: true
+  className: ""
+  host: fe.dev.local
+  path: /
+
+nginx:
+  nginx:
+  backendHost: backend-02-backend-spring-boot-rest-api.backend.svc.cluster.local
+  backendPort: 8080
+
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70

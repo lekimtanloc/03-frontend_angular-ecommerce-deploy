@@ -1,0 +1,5 @@
+apiVersion: v2
+name: 03-frontend-angular-ecommerce
+description: Angular ecommerce frontend with Nginx
+version: 0.1.0
+appVersion: "1.0.0"
